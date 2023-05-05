@@ -9,7 +9,7 @@ use App\Models\Ville;
 
 class HabitantController extends Controller
 {
-   
+
     public function index()
     {
         $habitants = Habitant::all();
@@ -22,7 +22,7 @@ class HabitantController extends Controller
     public function create()
     {
         $villes = Ville::all();
-    return view('create', compact('villes'));
+        return view('create', compact('villes'));
     }
 
     /**
@@ -33,7 +33,7 @@ class HabitantController extends Controller
         $habitant = new Habitant();
         $habitant->cin = $request->input('cin');
         $habitant->nom = $request->input('nom');
-        $habitant->prénom = $request->input('prénom');
+        $habitant->prenom = $request->input('prenom');
         $habitant->ville_id = $request->input('ville_id');
         $habitant->save();
         return redirect()->route('habitants.index')->with('success', 'Habitant ajouté avec succès');

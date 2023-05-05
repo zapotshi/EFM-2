@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-      Schema::create('villes', function (Blueprint $table) {
-    $table->id();
-    $table->string('ville');
-    $table->integer('NombreHabitats');
-    $table->timestamps();
-});
-
+        Schema::create('villes', function (Blueprint $table) {
+            $table->id();
+            $table->string('ville');
+            $table->integer('NombreHabitats');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,5 +27,3 @@ return new class extends Migration
         Schema::dropIfExists('villes');
     }
 };
-
-
